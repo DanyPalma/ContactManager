@@ -2,5 +2,5 @@
 
 REPO_PATH="/var/www/html"
 
-CD $REPO_PATH
+cd $REPO_PATH
 git pull origin main
