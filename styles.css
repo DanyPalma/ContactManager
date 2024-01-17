@@ -1,0 +1,94 @@
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
+}
+
+
+.main {
+    width:100%;
+    height: 100vh;
+    background: linear-gradient(#1b93a8, #222765);
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    flex-direction: column;
+}
+
+.login-form {
+    width:50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login-information{
+    width:50%;
+    color:white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.login-form-box {
+    width: 55vw;
+    height: 55vh;
+    border-radius: 1rem;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background: linear-gradient(
+        to right,
+        white 0%,
+        white 50%,
+        #245bd4 50%,
+        #254bd4 100%
+    );
+    
+}
+
+.login-form > p {
+    color: #b1b3ba;
+}
+
+.login-information > p { 
+    color: #b1b3ba;
+}
+
+
+.login-form-items {
+    width: 100%;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-form-items > input {
+    width:50%;
+    margin: .5rem;
+    padding: .5rem;
+    border: 1px;
+    border-color: gray;
+    border-style: solid;
+    border-radius: .5rem;
+    background-color: #fafbfe;
+}
+
+.login-form-items > button {
+    background-color: #245bd4;
+    color:white;
+    width: 54%;
+    border-radius: .5rem    ;
+    border: none;
+    padding: .5rem;
+}
+
+.login-form-items > label, button {
+    margin-top: 1rem;
+}
