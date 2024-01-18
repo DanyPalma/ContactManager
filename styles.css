@@ -57,8 +57,10 @@
 }
 
 .quote-box {
+    width: 80%;
     display:flex;
     flex-direction: column;
+    align-items: end;
 }
 
 .login-form {
@@ -68,6 +70,10 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.login-form > p{
+    margin-top: 1rem;
 }
 
 .login-information{
