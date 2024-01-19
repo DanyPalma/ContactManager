@@ -7,7 +7,7 @@
 	$firstName = "";
 	$lastName = "";
 
-	$conn = new mysqli("localhost", "TheBeast", "Group2API", "8123uasyewt2"); 	
+	$conn = new mysqli("localhost", "Group2API", "8123uasyewt2", "UserInfo"); 	
 	if( $conn->connect_error )
 	{
 		returnWithError( $conn->connect_error );
