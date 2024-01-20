@@ -2,9 +2,10 @@
 
 	$inData = getRequestInfo();
 	
-	$id = 0;
-	$firstName = "";
-	$lastName = "";
+	$firstName = $inData["firstName"];
+	$lastName = $inData["lastName"];
+	$login = $inData["login"];
+	$password = $inData["password"];
 
 	$conn = new mysqli("localhost", "Group2API", "8123uasyewt2", "UserInfo"); 	
 	if( $conn->connect_error )
@@ -13,22 +14,12 @@
 	}
 	else
 	{
-		$stmt = $conn->prepare("SELECT ID,firstName,lastName FROM Users WHERE Login=? AND Password =?");
-		$stmt->bind_param("ss", $inData["login"], $inData["password"]);
+		$stmt = $conn->prepare("INSERT into Users (firstName,lastName,Login,Password) VALUES (?,?)");
+		$stmt->bind_param("ss", $firstName, $lastName, $login, $password);
 		$stmt->execute();
-		$result = $stmt->get_result();
-
-		if( $row = $result->fetch_assoc()  )
-		{
-			returnWithInfo( $row['firstName'], $row['lastName'], $row['ID'] );
-		}
-		else
-		{
-			returnWithError("No Records Found");
-		}
-
 		$stmt->close();
 		$conn->close();
+		returnWithError("");
 	}
 	
 	function getRequestInfo()
@@ -44,14 +35,9 @@
 	
 	function returnWithError( $err )
 	{
-		$retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
+		$retValue = '{"error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
-	function returnWithInfo( $firstName, $lastName, $id )
-	{
-		$retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
-		sendResultInfoAsJson( $retValue );
-	}
 	
 ?>
