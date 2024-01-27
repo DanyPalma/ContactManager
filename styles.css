@@ -160,3 +160,117 @@
 .login-form-items > label, button {
     margin-top: 1rem;
 }
+
+/* Crafting stuff for the landing page below */
+
+.main-landing {
+    width:100%;
+    height: 100vh;
+    background-color:#09090b;
+    justify-content: center;
+    display:flex;
+}
+
+.user-information{
+    width: 66.6%;
+    height: 100%;
+    padding-top: 8rem;
+    padding-bottom: 6rem;
+    color:white;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+    border-left: transparent;
+    border-top: transparent;
+    border-right:#27272a;
+    border-bottom: transparent;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.search-add {
+    width: 33.3%;
+    height: 100%;
+    padding-top: 8rem;
+    padding-bottom: 6rem;
+    align-items: center;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-title-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 0rem;
+    font-size: xx-large;
+}
+
+.header {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: #3d3b66;
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 32px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ffffff;
+    transition: .3s;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+/* tables */
+
+table {
+    width:100%;
+    table-layout: fixed;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.tbl-content {
+    height: 300px;
+    overflow-x: auto;
+    margin-top: 10px;
+    border-style: ridge;
+}
+
+.tables {
+    align-self: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
