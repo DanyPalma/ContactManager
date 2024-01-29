@@ -6,7 +6,7 @@
     $last_name = $in_data["LastName"];
     $phone_number = $in_data["Phone"];
     $email = $in_data["Email"];
-    $user_id = in_data["UserID"];
+    $user_id = $in_data["UserID"];
 
     $conn = new mysqli("localhost", "Group2API", "8123uasyewt2", "UserInfo");
     if( $conn->connect_error)
