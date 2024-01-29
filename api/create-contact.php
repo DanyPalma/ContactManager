@@ -19,25 +19,27 @@
         $stmt->bind_param("sssss", $first_name, $last_name, $phone_number, $email, $user_id);
         $stmt->execute();
         $stmt->close();
-        $conn->closed();
+        $conn->close();
         returnWithError("");
     }
 
-    function getRequestInfo()
-    {
-        return json_decode(file_get_contents('php://input'), true);
-    }
+	function getRequestInfo()
+	{
+		return json_decode(file_get_contents('php://input'), true);
+	}
 
-    function sendResultInfoasJson( $obj )
-    {
-        header('Content-type: application/json');
-        echo $obj;
-    }
-
-    function returnWithError( $err ) 
-    {
-        $retValue = '{"error":""' . $err . '"}';
-        sendResultInfoasJson($retValue);
-    }
+	function sendResultInfoAsJson( $obj )
+	{
+		header('Content-type: application/json');
+		echo $obj;
+	}
+	
+	function returnWithError( $err )
+	{
+		$retValue = '{"error":"' . $err . '"}';
+		sendResultInfoAsJson( $retValue );
+	}
+	
+	
 
 ?>
