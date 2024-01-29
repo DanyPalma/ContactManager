@@ -11,8 +11,8 @@
     }
     else
     {
-        $stmt = $conn->prepare("SELECT * FROM Contacts WHERE FirstName = ?")
-        $stmt->bind_param("s", $first_name);
+        $stmt = $conn->prepare("SELECT * FROM Contacts")
+        //$stmt->bind_param("s", $first_name);
         $stmt->execute();
         $stmt->close();
         $conn->close();
