@@ -11,8 +11,8 @@
     }
     else
     {
-        $stmt = $conn->prepare("SELECT * from Contacts where User_ID == (UserID) VALUES (?)")
-        $stmt->bind_param("i", $user_id);
+        $stmt = $conn->prepare("SELECT * from Contacts")
+        // $stmt->bind_param("i", $user_id);
         $stmt->execute();
         $stmt->close();
         $conn->close();
