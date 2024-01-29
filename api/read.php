@@ -11,7 +11,7 @@
     }
     else
     {
-        $stmt = $conn->prepare("SELECT * FROM Contacts where User_ID = ?");
+        $stmt = $conn->prepare("SELECT * FROM Contacts where User_ID = (?)");
         $stmt->bind_param("s", $user_id);
         $stmt->execute();
         $stmt->close();
