@@ -3,6 +3,7 @@
     $in_data = getRequestInfo();
 
     $first_name = $in_data["FirstName"];
+    $first_name = "\"%" + $first_name + "%\"";
 
     $conn = new mysqli("localhost", "Group2API", "8123uasyewt2", "UserInfo");
     if( $conn->connect_error)
@@ -11,7 +12,7 @@
     }
     else
     {
-        $stmt = $conn->prepare("SELECT * FROM Contacts where FirstName like \"%?%\"");
+        $stmt = $conn->prepare("SELECT * FROM Contacts where FirstName like ?");
         $stmt->bind_param("s", $first_name);
         $stmt->execute();
 
