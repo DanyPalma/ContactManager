@@ -14,9 +14,26 @@
         $stmt = $conn->prepare("SELECT * FROM Contacts where User_ID = (?)");
         $stmt->bind_param("i", $user_id);
         $stmt->execute();
+
+        $result = $stmt->get_result();
+
+        $contacts = array();
+
+        while ($row = $result->fetch_assoc()) {
+            $contacts[] = $row;
+        }
+    
+        if (empty($contacts)) 
+        {
+            returnWithError("No Records Found");
+        }
+        else 
+        {
+            returnWithInfo($contacts)
+        }
+
         $stmt->close();
         $conn->close();
-        returnWithError("");
     }
 
 	function getRequestInfo()
@@ -35,6 +52,13 @@
 		$retValue = '{"error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
+
+    function returnwithInfo( $contacts ) 
+    {
+        $retValue = json.encode($contacts);
+
+        sendResultInfoAsJson($retValue);
+    }
 	
 	
 
