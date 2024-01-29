@@ -29,7 +29,7 @@
         }
         else 
         {
-            returnWithInfo($contacts)
+            returnWithInfo($contacts);
         }
 
         $stmt->close();
