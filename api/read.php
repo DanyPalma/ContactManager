@@ -2,7 +2,7 @@
 
     $in_data = getRequestInfo();
 
-    $user_id = $in_data["UserID"];
+    $first_name = $in_data["FirstName"];
 
     $conn = new mysqli("localhost", "Group2API", "8123uasyewt2", "UserInfo");
     if( $conn->connect_error)
@@ -11,8 +11,8 @@
     }
     else
     {
-        $stmt = $conn->prepare("SELECT * FROM Contacts where User_ID = (?)");
-        $stmt->bind_param("i", $user_id);
+        $stmt = $conn->prepare("SELECT * FROM Contacts where FirstName like \"%?%\"");
+        $stmt->bind_param("s", $first_name);
         $stmt->execute();
 
         $result = $stmt->get_result();
