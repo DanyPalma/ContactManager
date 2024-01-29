@@ -2,7 +2,7 @@
 
     $in_data = getRequestInfo();
 
-    $first_name = $in_data["FirstName"];
+    $user_id = $in_data["UserID"];
 
     $conn = new mysqli("localhost", "Group2API", "813uasyewt2", "UserInfo");
     if( $conn->connect_error)
@@ -11,8 +11,8 @@
     }
     else
     {
-        $stmt = $conn->prepare("SELECT * FROM Contacts")
-        //$stmt->bind_param("s", $first_name);
+        $stmt = $conn->prepare("SELECT * FROM Contacts where User_ID = ?");
+        $stmt->bind_param("i", $user_id);
         $stmt->execute();
         $stmt->close();
         $conn->close();
