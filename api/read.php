@@ -53,7 +53,7 @@
 		sendResultInfoAsJson( $retValue );
 	}
 
-    function returnwithInfo( $contacts ) 
+    function returnWithInfo( $contacts ) 
     {
         $retValue = json.encode($contacts);
 
