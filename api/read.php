@@ -12,7 +12,6 @@
     else
     {
         $stmt = $conn->prepare("SELECT * FROM Contacts");
-        $stmt->bind_param("s", $user_id);
         $stmt->execute();
         $stmt->close();
         $conn->close();
