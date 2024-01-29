@@ -4,6 +4,8 @@
 
     $id = $in_data["ID"];
 
+    $conn = new mysqli("localhost", "Group2API", "8123uasyewt2", "UserInfo"); 	
+
     if( $conn->connect_error )
 	{
 		returnWithError( $conn->connect_error );
