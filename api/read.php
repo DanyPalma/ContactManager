@@ -55,7 +55,7 @@
 
     function returnWithInfo( $contacts ) 
     {
-        $retValue = json.encode($contacts);
+        $retValue = json_encode($contacts);
 
         sendResultInfoAsJson($retValue);
     }
