@@ -14,7 +14,7 @@ function doRegister(event) {
 
     let payload = JSON.stringify(tmp);
 
-    let url = urlBase  = '/register.' + extension;
+    let url = urlBase + '/register.' + extension;
 
     let xhr = new XMLHttpRequest();
 
