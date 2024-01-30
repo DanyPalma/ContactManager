@@ -274,3 +274,77 @@ table {
     padding-right: 50px;
 }
 
+/* Add button */
+
+.add {
+    padding-bottom: 15px;
+}
+
+.add > button {
+    display: flex;
+    height: 40px;
+    padding: 0;
+    background: #f6f6f6;
+    border: none;
+    outline: none;
+    border-radius: 28px;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #eeeeee;
+}
+
+.add-button:active {
+    background-color: #b1b3ba;
+}
+
+.add-button-text,
+.add-button-icon {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 24px;
+    height: 100%;
+}
+
+.add-button-icon {
+    font-size: 1.5em;
+    background: rgba(0, 0, 0, 0.08);
+    padding-top: 7px;
+}
+
+/* search bar */
+
+.search {
+    --padding: 14px;
+
+    width: max-content;
+    display: flex;
+    align-items: center;
+    padding: var(--padding);
+    border-radius: 28px;
+    background: #f6f6f6;
+}
+
+.search:focus-within {
+    background: #eeeeee;
+}
+
+.search-input {
+    font-size: 16px;
+    color: #333333;
+    margin-left: var(--padding);
+    outline: none;
+    border: none;
+    background: transparent;
+    width: 300px;
+}
+
+.search-input::placeholder, 
+.search-icon {
+    color:rgba(0, 0, 0, 0.5);
+}
+
