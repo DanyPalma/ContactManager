@@ -90,7 +90,7 @@ function readCookie()
 
 }
 
-function logout(event)
+function doLogout(event)
 {
     event.preventDefault;
     userId = 0;
