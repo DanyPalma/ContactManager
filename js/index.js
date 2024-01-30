@@ -1,7 +1,8 @@
 const urlBase = 'https://d4ny.tech/api';
 const extension = 'php';
 
-function register(event) {
+function doRegister(event) {
+
     event.preventDefault();
 
     let firstName = document.getElementById("signFirst").value;
