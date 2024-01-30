@@ -348,3 +348,22 @@ table {
     color:rgba(0, 0, 0, 0.5);
 }
 
+.name-items {
+    width: 100%;
+    display:flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.name-items > input {
+    width:24%;
+    margin: .5rem;
+    padding: .5rem;
+    border: 1px;
+    border-color: #18181b;
+    border-style: solid;
+    border-radius: .5rem;
+    color:white;
+    background-color: transparent;
+}
