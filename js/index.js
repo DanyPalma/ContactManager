@@ -4,7 +4,53 @@ const extension = 'php';
 function register(event) {
     event.preventDefault();
 
-    let firstName = 
+    let firstName = document.getElementById("signFirst").value;
+    let lastName = document.getElementById("signLast").value;
+    let username = document.getElementById("signUsername").value;
+    let password = document.getElementById("signPassword").value;
+
+    let tmp = {firstName:firstName,lastName:lastName,login:username,password:password};
+
+    let payload = JSON.stringify(tmp);
+
+    let url = urlBase  = '/register.' + extension;
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("POST", url, true);
+
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+    try
+    {
+
+        xhr.onreadystatechange = function()
+        {
+            if(this.readyState == 4 & this.status == 200)
+            {
+                let jsonObject = JSON.parse(xhr.responseText);
+                err = jsonObject.error;
+                if(error != "")
+                {
+                    document.getElementById("signUpResult").innerHTML = "User/Password combination incorrect";
+                    return;
+                }
+
+                window.location.href = "index.html"
+
+
+
+            }
+        };
+        xhr.send(payload);
+
+    }
+    catch(err)
+    {
+        document.getElementById("signUpResult").innerHTML = err.message;
+    } 
+
+
 }
 
 function login(event) {
