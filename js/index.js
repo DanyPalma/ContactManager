@@ -1,5 +1,8 @@
+// index.js
+
 const urlBase = 'https://d4ny.tech/api';
 const extension = 'php';
+
 
 function doRegister(event) {
 
