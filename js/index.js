@@ -148,6 +148,8 @@ function readCookie()
 
         let payload = JSON.stringify(tmp);
 
+        console.log(payload);
+
         let url = urlBase + '/read.' + extension;
 
         let xhr = new XMLHttpRequest();
