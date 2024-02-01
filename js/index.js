@@ -135,6 +135,11 @@ function readCookie()
         }
     }
 
+
+    console.log("Information being printed");
+
+    console.log(userID + " " + firstName + " " + lastName);
+
     if(userID < 0) {
         window.location.href="index.html";
     }
