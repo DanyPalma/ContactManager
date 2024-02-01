@@ -171,7 +171,6 @@ function readCookie()
 
                 }
             };
-            console.log(xhr.send(payload));
             xhr.send(payload);
 
 
@@ -179,7 +178,7 @@ function readCookie()
         }
         catch(err)
         {
-            window.alert("Could not retrieve data for user" + firstName + " " + lastName);
+            window.alert("Could not retrieve data for user " + firstName + " " + lastName);
         }
 
 
