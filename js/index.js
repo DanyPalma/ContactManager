@@ -121,9 +121,7 @@ function readCookie()
     userID = -1;
     let data = document.cookie;
 
-    console.log("data: " + data);
     let splits = data.split(",");
-    console.log("splits: " + splits);
     for(var i = 0; i < splits.length; i++) {
         let thisOne = splits[i].trim();
         let tokens = thisOne.split("=");
@@ -138,10 +136,6 @@ function readCookie()
             userId = parseInt(tokens[1].trim());
         }
     }
-
-    console.log("Information being printed");
-
-    console.log(userId + " " + firstName + " " + lastName);
 
     if(userId < 0) {
         window.location.href="index.html";
