@@ -25,7 +25,7 @@
     
         if (empty($contacts)) 
         {
-            returnWithError("No Records Found for user" . $user_ID . " bruh ");
+            returnWithError("No Records Found for user");
         }
         else 
         {
