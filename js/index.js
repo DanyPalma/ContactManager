@@ -95,7 +95,7 @@ function login(event) {
 
                 saveCookie();
 
-                console.log(firstName + " " + lastName + " " + userID);
+                console.log(firstName + " " + lastName + " " + userId);
 
                 window.location.href = "landing.html"
             }
