@@ -145,7 +145,7 @@ function readCookie()
 
 
         console.log("uuid:" + userId);
-        let tmp = {userId:userId}
+        let tmp = {userId:"7"}
 
         let payload = JSON.stringify(tmp);
 
