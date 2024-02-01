@@ -151,7 +151,7 @@ function readCookie()
 
         let xhr = new XMLHttpRequest();
 
-        xhr.open("POST", url, true);
+        xhr.open("GET", url, true);
 
         xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
@@ -171,6 +171,7 @@ function readCookie()
 
                 }
             };
+            console.log(xhr.send(payload));
             xhr.send(payload);
 
 
