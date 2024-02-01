@@ -143,7 +143,7 @@ function readCookie()
     {
         document.getElementById("userName").innerHTML = "Welcome " + firstName + " " + lastName + "!"; 
 
-        let tmp = {UserID:userId};
+        let tmp = {UserID:"7"};
 
         let payload = JSON.stringify(tmp);
 
