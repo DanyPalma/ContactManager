@@ -26,8 +26,7 @@
         if (empty($contacts)) 
         {
 
-            $retString = "No Records Found for User " . $user_ID . " unfortunately";
-            returnWithError($retString);
+            returnWithError("No Records Found");
         }
         else 
         {
