@@ -136,11 +136,10 @@ function readCookie()
         }
         else if( tokens[0] == "userID"){
             userID = parseInt(tokens[1].trim());
+
+            console.log(userID);
         }
     }
-
-
-
 
     console.log("Information being printed");
 
