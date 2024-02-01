@@ -166,22 +166,11 @@ function readCookie()
 
                     let jsonObject = JSON.parse(xhr.responseText);
 
+                    console.log(jsonObject);
+
                     let table = document.getElementById("contacts");
 
-                    jsonObject.array.forEach(element => {
-                        let row = table.insertRow();
-
-                        let first = row.insertCell(0);
-                        let last = row.insertCell(1);
-                        let email = row.insertCell(2);
-                        let phone = row.insertCell(3);
-
-                        first.innerHTML = element.FirstName;
-                        last.innerHTML = element.LastName;
-                        email.innerHTML = element.Email;
-                        phone.innerHTML = element.Phone;
-
-                    });
+                
 
                 }
             };
