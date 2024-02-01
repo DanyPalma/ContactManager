@@ -2,7 +2,7 @@
 
     $in_data = getRequestInfo();
 
-    $user_ID = $in_data["UserID"];
+    $user_ID = $in_data["userId"];
 
     $conn = new mysqli("localhost", "Group2API", "8123uasyewt2", "UserInfo");
     if( $conn->connect_error)
