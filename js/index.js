@@ -134,6 +134,7 @@ function readCookie()
             lastName = tokens[1];
         }
         else if( tokens[0] == "userID"){
+            console.log("token thingf: " + tokens[1]);
             userID = parseInt(tokens[1].trim());
 
             console.log("userID: " + userID);
