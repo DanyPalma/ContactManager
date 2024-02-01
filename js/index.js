@@ -1,156 +1,156 @@
-// index.js
+// // index.js
 
-const urlBase = 'https://d4ny.tech/api';
-const extension = 'php';
-
-
-function doRegister(event) {
-
-    event.preventDefault();
-
-    let firstName = document.getElementById("signFirst").value;
-    let lastName = document.getElementById("signLast").value;
-    let username = document.getElementById("signUsername").value;
-    let password = document.getElementById("signPassword").value;
-
-    let tmp = {firstName:firstName,lastName:lastName,login:username,password:password};
-
-    let payload = JSON.stringify(tmp);
-
-    let url = urlBase + '/register.' + extension;
-
-    let xhr = new XMLHttpRequest();
-
-    xhr.open("POST", url, true);
-
-    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-
-    try
-    {
-
-        xhr.onreadystatechange = function()
-        {
-            if(this.readyState == 4 & this.status == 200)
-            {
-                let jsonObject = JSON.parse(xhr.responseText);
-                err = jsonObject.error;
-                if(error != "")
-                {
-                    document.getElementById("signUpResult").innerHTML = "User/Password combination incorrect";
-                    return;
-                }
-
-                window.location.href = "index.html"
+// const urlBase = 'https://d4ny.tech/api';
+// const extension = 'php';
 
 
+// function doRegister(event) {
 
-            }
-        };
-        xhr.send(payload);
+//     event.preventDefault();
 
-    }
-    catch(err)
-    {
-        document.getElementById("signUpResult").innerHTML = err.message;
-    } 
+//     let firstName = document.getElementById("signFirst").value;
+//     let lastName = document.getElementById("signLast").value;
+//     let username = document.getElementById("signUsername").value;
+//     let password = document.getElementById("signPassword").value;
+
+//     let tmp = {firstName:firstName,lastName:lastName,login:username,password:password};
+
+//     let payload = JSON.stringify(tmp);
+
+//     let url = urlBase + '/register.' + extension;
+
+//     let xhr = new XMLHttpRequest();
+
+//     xhr.open("POST", url, true);
+
+//     xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+//     try
+//     {
+
+//         xhr.onreadystatechange = function()
+//         {
+//             if(this.readyState == 4 & this.status == 200)
+//             {
+//                 let jsonObject = JSON.parse(xhr.responseText);
+//                 err = jsonObject.error;
+//                 if(error != "")
+//                 {
+//                     document.getElementById("signUpResult").innerHTML = "User/Password combination incorrect";
+//                     return;
+//                 }
+
+//                 window.location.href = "index.html"
 
 
-}
 
-function login(event) {
+//             }
+//         };
+//         xhr.send(payload);
 
-    event.preventDefault();
+//     }
+//     catch(err)
+//     {
+//         document.getElementById("signUpResult").innerHTML = err.message;
+//     } 
 
-    let login = document.getElementById("logUsername").value;
-    let password = document.getElementById("logPassword").value;
 
-    let tmp = {login:login,password:password};
+// }
 
-    let payload = JSON.stringify(tmp);
+// function login(event) {
 
-    let url = urlBase + '/login.' + extension;
+//     event.preventDefault();
 
-    let xhr = new XMLHttpRequest();
+//     let login = document.getElementById("logUsername").value;
+//     let password = document.getElementById("logPassword").value;
 
-    xhr.open("POST", url, true);
+//     let tmp = {login:login,password:password};
 
-    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+//     let payload = JSON.stringify(tmp);
 
-    try
-    {
-        xhr.onreadystatechange = function()
-        {
-            if(this.readyState == 4 & this.status == 200)
-            {
-                let jsonObject = JSON.parse(xhr.responseText);
-                userId = jsonObject.id;
-                if(userId < 1)
-                {
-                    document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
-                    return;
-                }
+//     let url = urlBase + '/login.' + extension;
 
-                firstName = jsonObject.firstName;
-                lastName = jsonObject.lastName;
+//     let xhr = new XMLHttpRequest();
 
-                saveCookie();
+//     xhr.open("POST", url, true);
 
-                window.location.href = "landing.html"
-            }
-        };
-        xhr.send(payload);
-    }   
-    catch(err)
-    {
-        document.getElementById("loginResult").innerHTML = err.message;
-    } 
+//     xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
-}
+//     try
+//     {
+//         xhr.onreadystatechange = function()
+//         {
+//             if(this.readyState == 4 & this.status == 200)
+//             {
+//                 let jsonObject = JSON.parse(xhr.responseText);
+//                 userId = jsonObject.id;
+//                 if(userId < 1)
+//                 {
+//                     document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
+//                     return;
+//                 }
 
-function saveCookie()
-{
-    let minutes = 20;
-    let date = new Date();
-    date.setTime(date.getTime()+(minutes*60*1000));
-    document.cookie
-	document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
-}
+//                 firstName = jsonObject.firstName;
+//                 lastName = jsonObject.lastName;
 
-function readCookie()
-{
-    userID = -1;
-    let data = document.cookie;
-    let splits = data.split(",");
-    for(var i = 0; i < splits.length; i++) {
-        let thisOne = splits[i].trim();
-        let tokens = thisOne.split("=");
-        if(tokens[0] == "firstName"){
-            firstName = tokens[1];
-        }
-        else if( tokens[0] == "lastName"){
-            lastName = tokens[1];
-        }
-        else if( tokens[0] == "userID"){
-            userID = parseInt(tokens[1].trim());
-        }
-    }
+//                 saveCookie();
 
-    if(userID < 0) {
-        window.location.href="index.html";
-    }
-    else 
-    {
-        document.getElementById("userName").innerHTML = "Welcome " + firstName + " " + lastName + "!"; 
-    }
+//                 window.location.href = "landing.html"
+//             }
+//         };
+//         xhr.send(payload);
+//     }   
+//     catch(err)
+//     {
+//         document.getElementById("loginResult").innerHTML = err.message;
+//     } 
 
-}
+// }
 
-function doLogout(event)
-{
-    event.preventDefault;
-    userId = 0;
-	firstName = "";
-	lastName = "";
-	document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-	window.location.href = "index.html";
-}
+// function saveCookie()
+// {
+//     let minutes = 20;
+//     let date = new Date();
+//     date.setTime(date.getTime()+(minutes*60*1000));
+//     document.cookie
+// 	document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
+// }
+
+// function readCookie()
+// {
+//     userID = -1;
+//     let data = document.cookie;
+//     let splits = data.split(",");
+//     for(var i = 0; i < splits.length; i++) {
+//         let thisOne = splits[i].trim();
+//         let tokens = thisOne.split("=");
+//         if(tokens[0] == "firstName"){
+//             firstName = tokens[1];
+//         }
+//         else if( tokens[0] == "lastName"){
+//             lastName = tokens[1];
+//         }
+//         else if( tokens[0] == "userID"){
+//             userID = parseInt(tokens[1].trim());
+//         }
+//     }
+
+//     if(userID < 0) {
+//         window.location.href="index.html";
+//     }
+//     else 
+//     {
+//         document.getElementById("userName").innerHTML = "Welcome " + firstName + " " + lastName + "!"; 
+//     }
+
+// }
+
+// function doLogout(event)
+// {
+//     event.preventDefault;
+//     userId = 0;
+// 	firstName = "";
+// 	lastName = "";
+// 	document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+// 	window.location.href = "index.html";
+// }
