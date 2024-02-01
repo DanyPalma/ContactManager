@@ -125,7 +125,6 @@ function readCookie()
     for(var i = 0; i < splits.length; i++) {
         let thisOne = splits[i].trim();
         let tokens = thisOne.split("=");
-        console.log(tokens[0]);
         if(tokens[0] == "firstName"){
             firstName = tokens[1];
         }
@@ -147,8 +146,6 @@ function readCookie()
         let tmp = {UserID:userId};
 
         let payload = JSON.stringify(tmp);
-
-        console.log(payload);
 
         let url = urlBase + '/read.' + extension;
 
