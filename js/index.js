@@ -143,11 +143,11 @@ function readCookie()
     {
         document.getElementById("userName").innerHTML = "Welcome " + firstName + " " + lastName + "!"; 
 
-        let tmp = {userid:userId};
+        let tmp = {FirstName:"e",UserId:userId};
 
         let payload = JSON.stringify(tmp);
 
-        let url = urlBase + '/read.' + extension;
+        let url = urlBase + '/search.' + extension;
 
         let xhr = new XMLHttpRequest();
 
