@@ -166,7 +166,22 @@ function readCookie()
 
                     let jsonObject = JSON.parse(xhr.responseText);
 
-                    console.log(jsonObject);
+                    let table = document.getElementById("contacts");
+
+                    jsonObject.forEach(function (contact) {
+                      // Create a new row for each object
+                      let row = table.insertRow();
+
+                      // Iterate through each property in the object
+                      for (let key in contact) {
+                        if (contact.hasOwnProperty(key)) {
+                          // Create a cell for each property
+                          let cell = row.insertCell();
+                          // Populate cell content with the property value
+                          cell.innerHTML = contact[key];
+                        }
+                      }
+                    });
 
                 }
             };
