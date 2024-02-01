@@ -170,7 +170,26 @@ function readCookie()
 
                     let table = document.getElementById("contacts");
 
-                
+                    jsonObject.forEach(function (contact) {
+                      // Create a new row for each object
+                      let row = table.insertRow();
+
+                      let propertiesToDisplay = [
+                        "FirstName",
+                        "LastName",
+                        "Email",
+                        "Phone",
+                      ];
+
+
+                      // Iterate through each property in the object
+                      propertiesToDisplay.forEach(function (property) {
+                        // Create a cell for each property
+                        let cell = row.insertCell();
+                        // Populate cell content with the property value
+                        cell.innerHTML = contact[property];
+                      });
+                    });
 
                 }
             };
