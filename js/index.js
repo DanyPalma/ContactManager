@@ -143,7 +143,7 @@ function readCookie()
     {
         document.getElementById("userName").innerHTML = "Welcome " + firstName + " " + lastName + "!"; 
 
-        let tmp = {UserID:userId};
+        let tmp = {UsrID:userId};
 
         let payload = JSON.stringify(tmp);
 
@@ -168,9 +168,13 @@ function readCookie()
 
                     console.log(jsonObject);
 
+
+
                 }
             };
             xhr.send(payload);
+
+
 
         }
         catch(err)
