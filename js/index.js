@@ -143,6 +143,42 @@ function readCookie()
     else 
     {
         document.getElementById("userName").innerHTML = "Welcome " + firstName + " " + lastName + "!"; 
+
+        let tmp = {UserID:userId};
+
+        let payload = JSON.stringify(tmp);
+
+        let url = urlBase + '/read.' + extension;
+
+        let xhr = new XMLHttpRequest();
+
+        xhr.open("GET", url, true);
+
+        xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+        try
+        {
+
+            xhr.onreadystatechange = function()
+            {
+                if(this.readyState == 4 && this.status == 200) 
+                {
+                    let jsonObject = JSON.parse(xhr.responseText);
+
+                    console.log(jsonObject);
+
+                }
+            };
+            xhr.send(payload);
+
+        }
+        catch(err)
+        {
+            window.alert("Could not retrieve data for user" + firstName + " " + lastName);
+        }
+
+
+
     }
 
 }
