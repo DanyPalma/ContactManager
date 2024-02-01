@@ -127,6 +127,7 @@ function readCookie()
     for(var i = 0; i < splits.length; i++) {
         let thisOne = splits[i].trim();
         let tokens = thisOne.split("=");
+        console.log(tokens[0]);
         if(tokens[0] == "firstName"){
             firstName = tokens[1];
         }
