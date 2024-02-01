@@ -134,19 +134,16 @@ function readCookie()
         else if( tokens[0] == "lastName"){
             lastName = tokens[1];
         }
-        else if( tokens[0] == "userID"){
-            console.log("token thingf: " + tokens[1]);
-            userID = parseInt(tokens[1].trim());
-
-            console.log("userID: " + userID);
+        else if( tokens[0] == "userId"){
+            userId = parseInt(tokens[1].trim());
         }
     }
 
     console.log("Information being printed");
 
-    console.log(userID + " " + firstName + " " + lastName);
+    console.log(userId + " " + firstName + " " + lastName);
 
-    if(userID < 0) {
+    if(userId < 0) {
         window.location.href="index.html";
     }
     else 
