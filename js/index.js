@@ -158,17 +158,18 @@ function readCookie()
         try
         {
 
-            xhr.onreadystatechange = function () {
-            if (this.readyState == 4) {
-                console.log("Status:", this.status);
-                console.log("Response:", this.responseText);
-                if (this.status == 200) {
-                let jsonObject = JSON.parse(xhr.responseText);
-                console.log(jsonObject);
-                } else {
-                console.error("Error:", this.status, this.statusText);
+            xhr.onreadystatechange = function()
+            {
+                if(this.readyState == 4 && this.status == 200) 
+                {
+
+                    let jsonObject = JSON.parse(xhr.responseText);
+
+                    console.log(jsonObject);
+
+
+
                 }
-            }
             };
             xhr.send(payload);
 
