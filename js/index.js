@@ -3,6 +3,12 @@
 const urlBase = '/api';
 const extension = 'php';
 
+function search(event) {
+    event.preventDefault
+
+
+}
+
 
 function doRegister(event) {
 
@@ -34,7 +40,7 @@ function doRegister(event) {
             {
                 let jsonObject = JSON.parse(xhr.responseText);
                 err = jsonObject.error;
-                if(error != "")
+                if(err != "")
                 {
                     document.getElementById("signUpResult").innerHTML = "User/Password combination incorrect";
                     return;
@@ -163,30 +169,19 @@ function readCookie()
             {
                 if(this.readyState == 4 && this.status == 200) 
                 {
-
                     let jsonObject = JSON.parse(xhr.responseText);
-
                     console.log(jsonObject);
-
                     let table = document.getElementById("contacts");
-
                     jsonObject.forEach(function (contact) {
-                      // Create a new row for each object
                       let row = table.insertRow();
-
                       let propertiesToDisplay = [
                         "FirstName",
                         "LastName",
                         "Email",
                         "Phone",
                       ];
-
-
-                      // Iterate through each property in the object
                       propertiesToDisplay.forEach(function (property) {
-                        // Create a cell for each property
                         let cell = row.insertCell();
-                        // Populate cell content with the property value
                         cell.innerHTML = contact[property];
                       });
                     });
