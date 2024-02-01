@@ -118,7 +118,7 @@ function saveCookie()
 
 function readCookie()
 {
-    userID = -1;
+    userId = -1;
     let data = document.cookie;
 
     let splits = data.split(",");
