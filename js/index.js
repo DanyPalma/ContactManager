@@ -1,6 +1,6 @@
 // index.js
 
-const urlBase = 'https://d4ny.tech/api';
+const urlBase = '165.227.181.177/api';
 const extension = 'php';
 
 
