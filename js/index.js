@@ -172,15 +172,17 @@ function readCookie()
                       // Create a new row for each object
                       let row = table.insertRow();
 
-                      // Iterate through each property in the object
-                      for (let key in contact) {
-                        if (contact.hasOwnProperty(key)) {
-                          // Create a cell for each property
-                          let cell = row.insertCell();
-                          // Populate cell content with the property value
-                          cell.innerHTML = contact[key];
-                        }
-                      }
+                      // Create cells for each property in the contact
+                      let firstNameCell = row.insertCell(0);
+                      let lastNameCell = row.insertCell(1);
+                      let emailCell = row.insertCell(2);
+                      let phoneCell = row.insertCell(3);
+
+                      // Populate cell content with corresponding contact property
+                      firstNameCell.innerHTML = contact.firstName;
+                      lastNameCell.innerHTML = contact.lastName;
+                      emailCell.innerHTML = contact.email;
+                      phoneCell.innerHTML = contact.phone;
                     });
 
                 }
