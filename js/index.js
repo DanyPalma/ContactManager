@@ -48,8 +48,6 @@ function doRegister(event) {
 
                 window.location.href = "index.html"
 
-
-
             }
         };
         xhr.send(payload);
