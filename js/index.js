@@ -127,7 +127,6 @@ function readCookie()
     for(var i = 0; i < splits.length; i++) {
         let thisOne = splits[i].trim();
         let tokens = thisOne.split("=");
-        console.log(tokens[1]);
         if(tokens[0] == "firstName"){
             firstName = tokens[1];
         }
@@ -137,7 +136,7 @@ function readCookie()
         else if( tokens[0] == "userID"){
             userID = parseInt(tokens[1].trim());
 
-            console.log(userID);
+            console.log("userID: " + userID);
         }
     }
 
