@@ -168,21 +168,19 @@ function readCookie()
 
                     let table = document.getElementById("contacts");
 
-                    jsonObject.forEach(function (contact) {
-                      // Create a new row for each object
-                      let row = table.insertRow();
+                    jsonObject.array.forEach(element => {
+                        let row = table.insertRow();
 
-                      // Create cells for each property in the contact
-                      let firstNameCell = row.insertCell(0);
-                      let lastNameCell = row.insertCell(1);
-                      let emailCell = row.insertCell(2);
-                      let phoneCell = row.insertCell(3);
+                        let first = row.insertCell(0);
+                        let last = row.insertCell(1);
+                        let email = row.insertCell(2);
+                        let phone = row.insertCell(3);
 
-                      // Populate cell content with corresponding contact property
-                      firstNameCell.innerHTML = contact.firstName;
-                      lastNameCell.innerHTML = contact.lastName;
-                      emailCell.innerHTML = contact.email;
-                      phoneCell.innerHTML = contact.phone;
+                        first.innerHTML = element.FirstName;
+                        last.innerHTML = element.LastName;
+                        email.innerHTML = element.Email;
+                        phone.innerHTML = element.Phone;
+
                     });
 
                 }
