@@ -382,12 +382,15 @@ table {
     display: flex;
     flex-direction: row;
     height:10vh;
-    width: 95vw;
+    width: 100vw;
     align-items: center;
     justify-content: space-between;
-    border: red;
-    border-style: dotted;
-    border-width: 1px;
+    border-bottom: var(--lighter-grey);
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-style: solid;
+    border-width: .2rem;
 }
 
 .logo-container {
@@ -454,9 +457,6 @@ table {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: red;
-    border-style: dotted;
-    border-width: 1px;
 }
 
 .search-form {
@@ -466,9 +466,6 @@ table {
     justify-content: center;
     width: 100%;
     height: 10vh;
-    border: red;
-    border-style: dotted;
-    border-width: 1px;
 }
 
 .search-form > input {
@@ -488,9 +485,6 @@ table {
 .footer-section {
     height:10vh;
     width: 100vw;
-    border: red;
-    border-style: dotted;
-    border-width: 1px;
     display:flex;
     flex-direction: row;
     align-items: center;
@@ -514,11 +508,8 @@ table {
     flex-direction: row;
     align-items: center;
     justify-content: start;
-        border: red;
-    border-style: dotted;
     width: 95%;
     height: 70vh;
-    border-width: 5px;
     overflow-y: auto;
 }
 
@@ -533,6 +524,8 @@ table {
     flex: 0 0 30%;
     height: 60vh;
     padding: 2rem;
+    border-width: .2rem;
+    border-style: solid;
     border-radius: 1rem;
     color:white;
     display:flex;
