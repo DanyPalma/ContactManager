@@ -34,6 +34,8 @@ function doSearch(event) {
 
   let payload = JSON.stringify(tmp);
 
+  console.log(payload);
+
   let url = urlBase + "/search." + extension;
 
   let xhr = new XMLHttpRequest();
