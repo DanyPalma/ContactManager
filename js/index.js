@@ -26,7 +26,7 @@ function doSearch(event) {
     }
   }
 
-  if (userID < 0) {
+  if (userId < 0) {
     alert(
       "You are not logged in or we had an Issue retrieving your information. Please log in again."
     );
