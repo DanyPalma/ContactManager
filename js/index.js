@@ -4,7 +4,6 @@ const urlBase = "/api";
 const extension = "php";
 
 function doSearch(event) {
-  event.preventDefault;
 
   let Name = document.getElementById("query").value;
 
@@ -49,6 +48,8 @@ function doSearch(event) {
         if (this.readyState == 4 && this.status == 200) {
             let jsonData = JSON.parse(xhr.responseText);
             let cardContainer = document.getElementById("cardContainer");
+
+            console.log(jsonData);
 
             // Clear existing cards
             cardContainer.innerHTML = "";
