@@ -2,7 +2,7 @@
 
     $in_data = getRequestInfo();
 
-    $search_name = $in_data["SearchName"];
+    $name = $in_data["Name"];
     $user_ID = $in_data["UserID"];
 
     $conn = new mysqli("localhost", "Group2API", "8123uasyewt2", "UserInfo");
@@ -13,7 +13,7 @@
     else
     {
         $stmt = $conn->prepare('SELECT * FROM Contacts WHERE (LOWER(FirstName) LIKE LOWER(?) OR LOWER(LastName) LIKE LOWER(?)) AND User_ID = ?');
-        $query = "%" . $search_name . "%";
+        $query = "%" . $name . "%";
         $stmt->bind_param("ss", $query, $query, $user_ID);
         $stmt->execute();
 
