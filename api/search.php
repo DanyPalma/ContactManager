@@ -12,9 +12,9 @@
     }
     else
     {
-        $stmt = $conn->prepare('SELECT * FROM Contacts where LOWER(FirstName) like LOWER(?) and User_ID = ?');
+        $stmt = $conn->prepare('SELECT * FROM Contacts WHERE LOWER(FirstName) LIKE LOWER(?) OR LOWER(LastName) LIKE LOWER(?) AND User_ID = ?');
         $query = "%" . $search_name . "%";
-        $stmt->bind_param("ss", $query, $user_ID);
+        $stmt->bind_param("ss", $query, $query, $user_ID);
         $stmt->execute();
 
         $result = $stmt->get_result();
