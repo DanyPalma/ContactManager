@@ -63,6 +63,7 @@ function doSearch(event) {
       if (this.readyState == 4 && this.status == 200) {
         
         let jsonData = JSON.parse(xhr.responseText);
+        console.log(xhr.responseText);
         let cardContainer = document.getElementById("cardContainer");
 
         console.log(jsonData);
