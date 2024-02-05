@@ -34,10 +34,7 @@ function doSearch(event) {
     );
   }
 
-
-
-
-  let tmp = { Name: Name, userId: userId };
+  let tmp = {Name:Name,userId:userId};
 
   console.log(tmp);
 
@@ -45,8 +42,7 @@ function doSearch(event) {
 
   console.log(payload);
 
-  let url = `${urlBase}/search.${extension}?Name=${Name}&userId=${userId}`;
-
+  let url = urlBase + "/search." + extension;
 
   let xhr = new XMLHttpRequest();
 
