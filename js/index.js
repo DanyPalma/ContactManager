@@ -34,7 +34,7 @@ function doSearch(event) {
     );
   }
 
-  let tmp = {Name:Name,userId:userId.toString()};
+  let tmp = {Name:Name,userId:userId};
 
   console.log(tmp);
 
