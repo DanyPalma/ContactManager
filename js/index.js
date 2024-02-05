@@ -65,7 +65,7 @@ function doSearch(event) {
         let jsonData = JSON.parse(xhr.responseText);
         let cardContainer = document.getElementById("cardContainer");
 
-        console.log("JSON Data: " + jsonData);
+        console.log(jsonData);
 
         // Clear existing cards
         cardContainer.innerHTML = "";
