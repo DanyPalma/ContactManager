@@ -34,6 +34,10 @@ function doSearch(event) {
     );
   }
 
+
+  console.log(Name);
+  console.log(userId);
+  
   let tmp = { Name: Name, userId: userId };
 
   console.log(tmp);
