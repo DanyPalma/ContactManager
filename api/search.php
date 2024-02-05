@@ -21,7 +21,7 @@
 
         $result = $stmt->get_result();
 
-        $contacts = array();
+        $contacts = array(); 
 
         while ($row = $result->fetch_assoc()) {
             $contacts[] = $row;
