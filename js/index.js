@@ -58,7 +58,7 @@ function doSearch(event) {
         // Clear existing cards
         cardContainer.innerHTML = "";
 
-        if (jsonData.error && jsonData.error == "No records found") {
+        if (jsonData.error || jsonData.error == "No records found") {
           let nameElement = document.createElement("h1");
           nameElement.textContent = "No records found";
           cardContainer.appendChild(nameElement);
