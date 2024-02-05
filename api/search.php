@@ -16,7 +16,7 @@
         //  OR (LOWER(CONCAT(FirstName, \' \', LastName)) LIKE LOWER(?))
         // SELECT * FROM Contacts WHERE (LOWER(FirstName) LIKE LOWER("%LUKE APPLESEED%") OR LOWER(LastName) LIKE LOWER("%LUKE APPLESEED%"))       OR (LOWER(CONCAT(FirstName, ' ', LastName)) LIKE LOWER("%LUKE APPLESEED%")) AND User_ID = 7;
         $query = "%" . $name . "%";
-        $stmt->bind_param("ssss", $query, $query, $query, $user_ID);
+        $stmt->bind_param("sss", $query, $query, $user_ID);
         $stmt->execute();
 
         $result = $stmt->get_result();
