@@ -59,7 +59,10 @@ function doSearch(event) {
         cardContainer.innerHTML = "";
 
         if (jsonData.error && jsonData.error == "No records found") {
-          cardContainer.innerHTML = "No records found";
+          let nameElement = document.createElement("h1");
+          nameElement.textContent = "No records found";
+          cardContainer.appendChild(nameElement);
+          return;
         }
 
         // Loop through the JSON data and create cards
