@@ -4,6 +4,10 @@ const urlBase = "/api";
 const extension = "php";
 
 function doSearch(event) {
+
+  event.preventDefault();
+
+  
   let Name = document.getElementById("query").value;
 
   userId = -1;
