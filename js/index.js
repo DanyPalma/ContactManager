@@ -1,6 +1,6 @@
 // index.js
 
-const urlBase = "d4ny.tech/api";
+const urlBase = "/api";
 const extension = "php";
 
 function doSearch(event) {
