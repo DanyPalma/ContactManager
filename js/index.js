@@ -33,7 +33,7 @@ function doSearch(event) {
       "You are not logged in or we had an Issue retrieving your information. Please log in again."
     );
 
-    window.href = "index.html";
+    window.location.href = "index.html";
   }
 
   let tmp = {Name:Name,userId:userId};
