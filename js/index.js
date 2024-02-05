@@ -36,17 +36,15 @@ function doSearch(event) {
 
   let tmp = {Name:Name,userId:userId};
 
-  console.log(tmp);
-
   let payload = JSON.stringify(tmp);
-
-  console.log(payload);
 
   let url = urlBase + "/search." + extension;
 
+  console.log(url);
+
   let xhr = new XMLHttpRequest();
 
-  xhr.open("GET", url, true);
+  xhr.open("POST", url, true);
 
   xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
