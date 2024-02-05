@@ -32,6 +32,8 @@ function doSearch(event) {
     alert(
       "You are not logged in or we had an Issue retrieving your information. Please log in again."
     );
+
+    window.href = "index.html";
   }
 
   let tmp = {Name:Name,userId:userId};
