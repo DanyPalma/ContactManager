@@ -207,7 +207,7 @@ function login(event) {
 
         saveCookie();
 
-        window.location.href = "landing.html";
+        window.location.href = "newlanding.html";
       }
     };
     xhr.send(payload);
