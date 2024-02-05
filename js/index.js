@@ -37,7 +37,7 @@ function doSearch(event) {
 
   console.log(Name);
   console.log(userId);
-  
+
   let tmp = { Name: Name, userId: userId };
 
   console.log(tmp);
@@ -56,11 +56,16 @@ function doSearch(event) {
 
   try {
     xhr.onreadystatechange = function () {
+
+      console.log("Ready state:", xhr.readyState);
+      console.log("Status:", xhr.status);
+
       if (this.readyState == 4 && this.status == 200) {
+        
         let jsonData = JSON.parse(xhr.responseText);
         let cardContainer = document.getElementById("cardContainer");
 
-        console.log(jsonData);
+        console.log("JSON Data: " + jsonData);
 
         // Clear existing cards
         cardContainer.innerHTML = "";
