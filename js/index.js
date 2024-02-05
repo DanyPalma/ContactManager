@@ -40,8 +40,6 @@ function doSearch(event) {
 
   let url = urlBase + "/search." + extension;
 
-  console.log(url);
-
   let xhr = new XMLHttpRequest();
 
   xhr.open("POST", url, true);
@@ -53,47 +51,47 @@ function doSearch(event) {
       if (this.readyState == 4 && this.status == 200) {
         
         let jsonData = JSON.parse(xhr.responseText);
-        //let cardContainer = document.getElementById("cardContainer");
+        let cardContainer = document.getElementById("cardContainer");
 
         console.log(jsonData);
 
-        // // Clear existing cards
-        // cardContainer.innerHTML = "";
+        // Clear existing cards
+        cardContainer.innerHTML = "";
 
-        // // Loop through the JSON data and create cards
-        // for (let i = 0; i < jsonData.length; i++) {
-        //   let cardData = jsonData[i];
+        // Loop through the JSON data and create cards
+        for (let i = 0; i < jsonData.length; i++) {
+          let cardData = jsonData[i];
 
-        //   // Create card element
-        //   let card = document.createElement("div");
-        //   card.className = "card";
+          // Create card element
+          let card = document.createElement("div");
+          card.className = "card";
 
-        //   // Create h1 element for name
-        //   let nameElement = document.createElement("h1");
-        //   nameElement.textContent =
-        //     cardData.FirstName + " " + cardData.LastName;
+          // Create h1 element for name
+          let nameElement = document.createElement("h1");
+          nameElement.textContent =
+            cardData.FirstName + " " + cardData.LastName;
 
-        //   // Create div element for contact information
-        //   let contactInfoElement = document.createElement("div");
+          // Create div element for contact information
+          let contactInfoElement = document.createElement("div");
 
-        //   // Create p elements for phone and email
-        //   let phoneElement = document.createElement("p");
-        //   phoneElement.textContent = "Phone: " + cardData.Phone;
+          // Create p elements for phone and email
+          let phoneElement = document.createElement("p");
+          phoneElement.textContent = "Phone: " + cardData.Phone;
 
-        //   let emailElement = document.createElement("p");
-        //   emailElement.textContent = "Email: " + cardData.Email;
+          let emailElement = document.createElement("p");
+          emailElement.textContent = "Email: " + cardData.Email;
 
-        //   // Append phone and email elements to contact information div
-        //   contactInfoElement.appendChild(phoneElement);
-        //   contactInfoElement.appendChild(emailElement);
+          // Append phone and email elements to contact information div
+          contactInfoElement.appendChild(phoneElement);
+          contactInfoElement.appendChild(emailElement);
 
-        //   // Append name and contact information to the card
-        //   card.appendChild(nameElement);
-        //   card.appendChild(contactInfoElement);
+          // Append name and contact information to the card
+          card.appendChild(nameElement);
+          card.appendChild(contactInfoElement);
 
-        //   // Append the card to the card container
-        //   cardContainer.appendChild(card);
-        // }
+          // Append the card to the card container
+          cardContainer.appendChild(card);
+        }
       }
     };
 
