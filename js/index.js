@@ -36,6 +36,8 @@ function doSearch(event) {
 
   let tmp = { Name: Name, userId: userId };
 
+  console.log(tmp);
+
   let payload = JSON.stringify(tmp);
 
   console.log(payload);
