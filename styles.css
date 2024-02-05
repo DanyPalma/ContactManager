@@ -416,6 +416,11 @@ table {
     border-width: .2rem;
 }
 
+.logo-container > a {
+    color: white;
+    text-decoration: none;
+}
+
 .logo-container {
     display:flex;
     flex-direction: row;
@@ -477,6 +482,7 @@ table {
     height: 80vh;
     width: 100vw;
     display:flex;
+    color: white;
     flex-direction: column;
     align-items: center;
     justify-content: center;
