@@ -55,8 +55,12 @@ function doSearch(event) {
 
         console.log(jsonData);
 
-        // Clear existing cards
-        cardContainer.innerHTML = "";
+        if (jsonData.error && jsonData.error == "No records found") {
+          cardContainer.innerHTML = "No records found";
+        }
+
+          // Clear existing cards
+          cardContainer.innerHTML = "";
 
         // Loop through the JSON data and create cards
         for (let i = 0; i < jsonData.length; i++) {
