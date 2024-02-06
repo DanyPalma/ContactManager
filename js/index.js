@@ -10,6 +10,8 @@ function deleteContact(event) {
     .textContent;
   id = id.split(":")[1].trim();
 
+  console.log(id);
+
   let tmp = { ID: id };
 
   let payload = JSON.stringify(tmp);
