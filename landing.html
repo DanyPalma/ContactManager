@@ -4,8 +4,26 @@
     <head>
         <link rel="stylesheet" href="styles.css">
         <script src="./js/index.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+
     </head>
     <body class="main">
+        <div class="cursor">
+            <div id="bigBall" class="cursor_ball cursor_ball_big">
+              <svg height="30" width="30">
+                <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
+              </svg>
+            </div>
+            
+            <div id="smallBall" class="cursor_ball cursor_ball_small">
+              <svg height="10" width="10">
+                <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
+              </svg>
+            </div>
+          </div>
+
+          
+
         <div class="title-bar">
             <div class="logo-container">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="logo">
@@ -25,12 +43,6 @@
                 <a href="/logout.html">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="smaller-logo">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
-                </svg>
-                </a>
-
-                <a href="/user.html">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="smaller-logo">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                 </svg>
                 </a>
 
@@ -59,5 +71,9 @@
             <p>&copy; 2024 Contact manager Inc. All rights reserved.</p>
             <a href="https://github.com/danypalma/contactmanager" target="_blank">Github</a>
         </div>
+
+        <script src="./js/cursor.js"></script>
+
+
     </body>
 </html>
