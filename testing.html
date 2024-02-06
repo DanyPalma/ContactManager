@@ -4,8 +4,27 @@
     <head>
         <link rel="stylesheet" href="styles.css">
         <script src="./js/index.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+
     </head>
     <body class="main">
+
+        <div class="cursor">
+            <div id="bigBall" class="cursor_ball cursor_ball_big">
+              <svg height="30" width="30">
+                <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
+              </svg>
+            </div>
+            
+            <div id="smallBall" class="cursor_ball cursor_ball_small">
+              <svg height="10" width="10">
+                <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
+              </svg>
+            </div>
+          </div>
+
+          
+
         <div class="title-bar">
             <div class="logo-container">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="logo">
@@ -100,5 +119,8 @@
             <p>&copy; 2024 Contact manager Inc. All rights reserved.</p>
             <a href="https://github.com/danypalma/contactmanager" target="_blank">Github</a>
         </div>
+
+        <script src="./js/cursor.js"></script>
+
     </body>
 </html>
