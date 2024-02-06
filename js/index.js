@@ -6,32 +6,11 @@ const extension = "php";
 function deleteContact(event) {
   event.preventDefault();
 
-  let id = event.target.parentNode.parentNode.querySelector(".idBox").textContent.split(":")[1].trim();
+  let ID = event.target.parentNode.parentNode.querySelector(".idBox").textContent.split(":")[1].trim();
 
-  userId = -1;
-
-  let data = document.cookie;
-
-  let splits = data.split(",");
-  for (var i = 0; i < splits.length; i++) {
-    let thisOne = splits[i].trim();
-    let tokens = thisOne.split("=");
-    if (tokens[0] == "userId") {
-      userId = parseInt(tokens[1].trim());
-    }
-  }
-
-  if (userId < 0) {
-    alert(
-      "You are not logged in or we had an Issue retrieving your information. Please log in again."
-    );
-
-    window.location.href = "index.html";
-  }
 
   let tmp = {
-    ID: id,
-    userId: userId,
+    ID: ID,
   };
 
   let payload = JSON.stringify(tmp);
