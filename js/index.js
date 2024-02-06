@@ -238,16 +238,16 @@ function doRegister(event) {
             "User/Password combination incorrect";
           return;
         }
-
-        alert("Successfully Registered User");
-
-        window.location.href = "index.html";
       }
     };
     xhr.send(payload);
   } catch (err) {
     document.getElementById("signUpResult").innerHTML = err.message;
   }
+
+  alert("Successfully Registered User");
+  window.location.href("index.html")
+
 }
 
 function login(event) {
