@@ -37,7 +37,13 @@
                 <div class="login-form-items">
                     <input id="signUsername" placeholder="Username" type="username">
                     <input id="signPassword" placeholder="Password" type="password">
-                    <button class="hoverable" onclick="doRegister(event);">Sign Up</button>
+                    <button id="registerButton" class="hoverable" onclick="doRegister(event);">Sign Up</button>
+                    <div class="req-div">
+                        <h2 class="not-met" id="minLengthReq">8 character minimum</h2>
+                        <h2 class="not-met" id="uppercaseReq">1 uppercase character minimum</h2>
+                        <h2 class="not-met" id="specialCharReq">1 special character minimum</h2>
+                        <h2 class="not-met" id="digitReq">1 digit minimum</h2>
+                    </div>
                     <h1 id="signUpResult"></h1>
                 </div>
             </form>
@@ -53,7 +59,7 @@
             </div>
         </div>
 
-
+        <script src="./js/pass.js"></script>
         <script src="./js/cursor.js"></script>
 
     </body>
