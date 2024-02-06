@@ -1,0 +1,336 @@
+swagger: '2.0'
+info:
+  description: |-
+    This is the API documentation for Team 2 ContactManager App
+
+    Contacts:
+    Fabio: fa830699@ucf.edu
+    Daniel: root@ucf.edu    
+  version: 1.0.0
+  title: ContactManager API
+  # put the contact info for your development or API team
+  
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+
+paths:
+  /login.php:
+    
+    post:
+      tags:
+      - login
+      summary: logs in to ContactManager app
+      operationId: dlLogin
+      description: logs in to ContactManager app
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: loginItem
+        description: login
+        schema:
+          $ref: '#/definitions/login'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+        500:
+          description: Server Error
+  /register.php:
+    
+    post:
+      tags:
+      - register
+      summary: registers new user in to ContactManager app
+      operationId: dRegister
+      description: registers new user in to ContactManager app
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: registerItem
+        description: register
+        schema:
+          $ref: '#/definitions/register'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+        500:
+          description: Server Error
+  /create.php:
+
+    post:
+        tags:
+        - create
+        summary: creates new contact in to ContactManager app for user
+        operationId: dCreate
+        description: creates new contact in to ContactManager app for user
+        consumes:
+        - application/json
+        produces:
+        - application/json
+        parameters:
+        - in: body
+          name: createItem
+          description: create Contact
+          schema:
+            $ref: '#/definitions/create'
+        responses:
+          200:
+            description: OK
+          404:
+            description: URL Not Found
+          500:
+            description: Server Error
+            
+  /update.php:
+
+    post:
+        tags:
+        - update
+        summary: updates a contact in ContactManager app
+        operationId: dUpdate
+        description: updates a contact in ContactManager app
+        consumes:
+        - application/json
+        produces:
+        - application/json
+        parameters:
+        - in: body
+          name: updateItem
+          description: update Contact
+          schema:
+            $ref: '#/definitions/update'
+        responses:
+          200:
+            description: OK
+          404:
+            description: URL Not Found
+          500:
+            description: Server Error
+            
+  /read.php:
+
+    get:
+        tags:
+        - read
+        summary: searches for contact in ContactManager app per UserID
+        operationId: dRead
+        description: searches for contact in ContactManager app per UserID
+        consumes:
+        - application/json
+        produces:
+        - application/json
+        parameters:
+        - in: body
+          name: readItem
+          description: read / search Contact
+          schema:
+            $ref: '#/definitions/read'
+        responses:
+          200:
+            description: OK
+          404:
+            description: URL Not Found
+          500:
+            description: Server Error
+  /search.php:
+
+    post:
+        tags:
+        - search
+        summary: searches a contact in ContactManager app
+        operationId: dSearch
+        description: searches a contact in ContactManager app
+        consumes:
+        - application/json
+        produces:
+        - application/json
+        parameters:
+        - in: body
+          name: searchItem
+          description: search Contact
+          schema:
+            $ref: '#/definitions/search'
+        responses:
+          200:
+            description: OK
+          404:
+            description: URL Not Found
+          500:
+            description: Server Error          
+  /delete.php:
+
+    delete:
+        tags:
+        - delete
+        summary: deletes a contact in ContactManager app
+        operationId: dDelete
+        description: deletes a contact in ContactManager app
+        consumes:
+        - application/json
+        produces:
+        - application/json
+        parameters:
+        - in: body
+          name: deleteItem
+          description: delete Contact
+          schema:
+            $ref: '#/definitions/delete'
+        responses:
+          200:
+            description: OK
+          404:
+            description: URL Not Found
+          500:
+            description: Server Error
+  
+            
+            
+            
+definitions:
+  login:
+    type: object
+    required:
+    - login
+    - password
+  
+    properties:
+      login:
+        type: string
+        example: "RickL"
+      password:
+        type: string
+        example: "COP4331"
+        
+  register:
+    type: object
+    required:
+    - firstName
+    - lastName
+    - login
+    - password
+    
+    properties:
+      firstName:
+        type: string
+        example: "fabs"
+        
+      lastName:
+        type: string
+        example: "coder"
+        
+      login:
+        type: string
+        example: "fabslogin"
+        
+      password:
+        type: string
+        example: "123456"
+  create:
+    type: object
+    required:
+    - FirstName
+    - LastName
+    - Phone
+    - Email
+    - UserID
+    
+    properties:
+      FirstName:
+        type: string
+        example: "Leia"
+        
+      LastName:
+        type: string
+        example: "Appleseed"
+        
+      Phone:
+        type: string
+        example: "456-789-0123"
+        
+      Email:
+        type: string
+        example: "LeAppleseed@ucf.edu"
+      
+      UserID:
+        type: integer
+        example: 1
+        
+  read:
+    type: object
+    required: 
+    - userId
+    
+    properties:
+      userId:
+        type: integer
+        example: 7
+  search:
+    type: object
+    required: 
+    - userId
+    - query
+    
+    properties:
+      userId:
+        type: integer
+        example: 1
+      query:
+        type: string
+        example: "a"
+  
+  update:
+    type: object
+    required:
+    - FirstName
+    - LastName
+    - Phone
+    - Email
+    - UserID
+    
+    properties:
+      FirstName:
+        type: string
+        example: "Leia"
+        
+      LastName:
+        type: string
+        example: "Appleseed"
+        
+      Phone:
+        type: string
+        example: "456-789-0123"
+        
+      Email:
+        type: string
+        example: "LeAppleseed@ucf.edu"
+      
+      UserID:
+        type: integer
+        example: 8
+        
+  delete:
+    type: object
+    required:
+    - ID
+    
+    properties:
+      ID:
+        type: integer
+        example: 8
+  
+  
+host: d4ny.tech
+basePath: /api
+schemes:
+- http
