@@ -175,6 +175,7 @@ function doSearch(event) {
 
           // Append name and contact information to the card
           card.appendChild(nameElement);
+          card.appendChild(idElement);
           card.appendChild(contactInfoElement);
 
           // Append the card to the card container
