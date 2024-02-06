@@ -787,3 +787,23 @@ a {
 a:hover {
     cursor:none;
 }
+
+.req-div {
+    margin: 1.25rem;
+}
+
+.req-div > p {
+    margin: .5rem
+}
+
+.not-met {
+    color:red;
+}
+
+.met {
+    color: green;
+}
+
+*:focus {
+    outline:none
+}
