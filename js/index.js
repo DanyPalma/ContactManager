@@ -4,7 +4,9 @@ const urlBase = "/api";
 const extension = "php";
 
 function deleteContact(button) {
-  let id = button.children;
+  let cardDiv = button.closest(".card");
+
+  let id = cardDiv.children.querySelector("h2");
 
   console.log(id);
 }
@@ -152,7 +154,6 @@ function doSearch(event) {
 
           let mainInfoElement = document.createElement("div");
 
-
           // Create h1 element for name
           let nameElement = document.createElement("h1");
           nameElement.textContent =
@@ -179,7 +180,7 @@ function doSearch(event) {
           // Append name and contact information to the card
 
           mainInfoElement.appendChild(nameElement);
-          mainInfoElement.appendChild(idElement)
+          mainInfoElement.appendChild(idElement);
 
           card.appendChild(mainInfoElement);
           card.appendChild(contactInfoElement);
