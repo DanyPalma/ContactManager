@@ -12,9 +12,12 @@ function deleteContact(button) {
   var paragraph = OuterDiv.querySelector('p');
 
   var paragraphText = paragraph.textContent;
-  
 
+  var ID = paragraphText.split(":")[1].trim();
+  
   console.log(paragraphText);
+
+  console.log(ID);
 
   // let tmp = {
   //   ID: ID,
