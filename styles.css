@@ -6,11 +6,6 @@
     width: 0px;
 }
 
-button:hover {
-    cursor: pointer;
-
-}
-
 /* background of the scrollbar except button or resizer */
 .contact-cardsy::-webkit-scrollbar-track {
     background-color: transparent;
@@ -323,7 +318,6 @@ table {
     overflow: hidden;
     font-size: 16px;
     font-weight: 500;
-    cursor: pointer;
 }
 
 .add-button:hover {
@@ -699,4 +693,46 @@ table {
     border-radius: .5rem;
     border: none;
     padding: .5rem;
+}
+
+.hero-main {
+    height: 100vh;
+    width: 100vw;
+    display:flex;
+    background-color: var(--black);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    font-size: 5rem;
+}
+
+
+
+.hero-anchors > a{
+    color:white;
+    text-decoration: none;
+    font-size: xx-large;
+}
+
+
+.cursor {
+    pointer-events: none;
+}
+
+.cursor_ball {
+    position: absolute;
+    top: 0;
+    left: 0;
+    mix-blend-mode: difference;
+    z-index: 1000;
+}
+
+.cursor_ball circle {
+    fill: #f7f8fa;
+}
+
+body {
+    overflow:hidden;
+    cursor:none;
 }
