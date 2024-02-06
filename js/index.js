@@ -6,6 +6,7 @@ const extension = "php";
 function deleteContact(button) {
   let contactDiv = button.closest(".invisible").innerHTML;
 
+  console.log("TROLLING");
   console.log(contactDiv);
 }
 
