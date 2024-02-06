@@ -6,7 +6,7 @@ const extension = "php";
 function deleteContact(button) {
   var childElements = button.querySelectorAll("h2");
 
-  console.log(childElements.textContent);
+  console.log(childElements);
 }
 
 function addContact(event) {
