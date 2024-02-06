@@ -63,6 +63,10 @@ function addContact(event) {
           alert("Error adding contact, please try again");
           return;
         }
+        else {
+          alert("Successfully added contact");
+          window.location.href("./newlanding.html");
+        }
       }
     };
 
@@ -234,6 +238,8 @@ function doRegister(event) {
             "User/Password combination incorrect";
           return;
         }
+
+        alert("Successfully Registered User");
 
         window.location.href = "index.html";
       }
