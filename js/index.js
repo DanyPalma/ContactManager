@@ -196,11 +196,8 @@ function doSearch(event) {
 
           let contactDiv = document.getElementById("contact-button");
 
-          let contactID = document.createElement("h2");
-          contactID.id = "contactID"
-          contactID.textContent = cardData.ID;
+          contactDiv.innerText = cardData.ID;
 
-          contactDiv.appendChild(contactID);
         }
       }
     };
