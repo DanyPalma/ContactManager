@@ -287,7 +287,7 @@ function doSearch(event) {
       "You are not logged in or we had an Issue retrieving your information. Please log in again."
     );
 
-    window.location.href = "index.html";
+    window.location.href = "log.html";
   }
 
   let tmp = { Name: Name, userId: userId };
@@ -446,7 +446,7 @@ function doRegister(event) {
   }
 
   alert("Successfully Registered User");
-  window.location.href = "./index.html";
+  window.location.href = "./log.html";
 }
 
 function login(event) {
@@ -591,5 +591,5 @@ function doLogout(event) {
   firstName = "";
   lastName = "";
   document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-  window.location.href = "index.html";
+  window.location.href = "log.html";
 }
