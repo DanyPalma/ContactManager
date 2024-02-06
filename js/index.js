@@ -4,7 +4,7 @@ const urlBase = "/api";
 const extension = "php";
 
 function deleteContact(button) {
-  let id = document.getElementById("contactID").value;
+  let id = document.getElementById("contactID");
 
   console.log(id);
 
