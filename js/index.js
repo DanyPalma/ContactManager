@@ -4,7 +4,7 @@ const urlBase = "/api";
 const extension = "php";
 
 function deleteContact(button) {
-  let cardDiv = button.closest(".idBox");
+  let cardDiv = button.closest(".idBox").innerHTML;
 
   console.log(cardDiv);
 }
