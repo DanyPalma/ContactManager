@@ -13,7 +13,6 @@ function editContact(button) {
   card.className = "card-edit";
 
   // Get current information
-  let name = card.querySelector('h1').textContent.trim();
 
   let first = card.querySelector('h1').textContent.trim().split(' ')[0].trim();
 
@@ -58,24 +57,71 @@ function saveContact(button) {
   let form = button.closest('.add-form');
 
   // Get updated information
-  let first = form.querySelector('#first-add').value;
-  let last = form.querySelector('#last-add').value;
-  let phone = form.querySelector('#phone-add').value;
-  let email = form.querySelector('#email-add').value;
+  let FirstName = form.querySelector('#first-add').value;
+  let LastName = form.querySelector('#last-add').value;
+  let Phone = form.querySelector('#phone-add').value;
+  let Email = form.querySelector('#email-add').value;
+  let ID = form.querySelector('p').textContent.trim().split(':')[1].trim();
+
+  let tmp = {
+    FirstName: FirstName,
+    LastName: LastName,
+    Phone: Phone,
+    Email: Email,
+    ID: ID,
+  };
+
+  let payload = JSON.stringify(tmp);
+
+  let url = urlBase + "/update." + extension;
+
+  let xhr = new XMLHttpRequest();
+
+  xhr.open("POST", url, true);
+
+  xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+  try {
+    xhr.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        let jsonObject = JSON.parse(xhr.responseText);
+        err = jsonObject.error;
+        if (err != "") {
+          alert("Error updating contact, please try again");
+          return;
+        }
+      }
+    };
+
+    xhr.send(payload);
+  } catch (err) {
+    alert("Error: " + err.message);
+  }
+
 
   // Replace the card content with updated information
   card.innerHTML = `
     <div>
-      <h1>${first} ${last}</h1>
-      <p>${form.querySelector('p').textContent}</p>
+      <h1>${FirstName} ${LastName}</h1>
+      <p>ID: ${ID}</p>
       <div class="contact-buttons">
-        <button onclick="editContact(this);">Edit</button>
-        <button onclick="deleteContact(this);">Delete</button>
-      </div>
+      <button onclick="editContact(this);">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="smaller-logo">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+        </svg>
+      </button>
+
+      <button onclick="deleteContact(this);">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="smaller-logo">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+        </svg>
+      </button >
+    </div>
+</div>
     </div>
     <div>
-      <p>Phone: ${phone}</p>
-      <p>Email: ${email}</p>
+      <p>Phone: ${Phone}</p>
+      <p>Email: ${Email}</p>
     </div>
   `;
 
