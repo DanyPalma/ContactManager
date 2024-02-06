@@ -6,8 +6,7 @@ const extension = "php";
 function deleteContact(button) {
   var card = button.closest(".invisible");
 
-
-  console.log(card);
+  console.log(card.innerHTML);
   // Find the closest sibling div with the class "invisible"
 }
 
