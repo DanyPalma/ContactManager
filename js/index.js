@@ -194,11 +194,12 @@ function doSearch(event) {
             </button >
           </div>
         `;
-        let contactID = document.createElement("h2");
-        contactID.className = "invisible";
-        contactID.textContent = cardData.ID;
 
         let contactDiv = document.getElementById("contact-button-div");
+
+                let contactID = document.createElement("h2");
+                contactID.className = "invisible";
+                contactID.textContent = cardData.ID;
 
         contactDiv.appendChild("contactID");
 
