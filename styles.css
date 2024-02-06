@@ -19,8 +19,8 @@ button:hover {
 /* scrollbar itself */
 .contact-cards::-webkit-scrollbar-thumb {
     background-color: var(--lighter-grey);
-    border-radius: 16px;
-    border: 4px solid transparent;
+    border-radius: 8px;
+    border: 4px solid var(--black);
 }
 
 /* set button(top and bottom of the scrollbar) */
