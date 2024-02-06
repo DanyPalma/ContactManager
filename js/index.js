@@ -3,7 +3,17 @@
 const urlBase = "/api";
 const extension = "php";
 
+function editContact(button) {
+
+}
+
 function deleteContact(button) {
+
+  var isConfirmed = window.confirm("Are you sure you want to delete this contact?");
+
+  if (!isConfirmed) {
+    return;
+  }
   
   var innerDiv = button.parentNode;
 
