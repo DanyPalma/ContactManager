@@ -4,10 +4,14 @@ const urlBase = "/api";
 const extension = "php";
 
 function deleteContact(button) {
-  let contactDiv = button.closest(".invisible").innerHTML;
+    var contactDiv = button.closest(".contact");
 
-  console.log("TROLLING");
-  console.log(contactDiv);
+    // Find the closest sibling div with the class "invisible"
+    var invisibleDiv = contactDiv.nextElementSibling;
+
+    // Get and log the inner HTML of the invisible div
+    var invisibleHTML = invisibleDiv.innerHTML;
+    console.log(invisibleHTML);
 }
 
 function addContact(event) {
