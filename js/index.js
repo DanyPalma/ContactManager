@@ -7,7 +7,7 @@ function deleteContact(event) {
   event.preventDefault();
 
   let ID = event.target.parentNode.parentNode.querySelector(".idBox").textContent.split(":")[1].trim();
-
+  // text content doesnt exist though
 
   let tmp = {
     ID: ID,
@@ -222,7 +222,7 @@ function doSearch(event) {
           // Append the card to the card container
           cardContainer.appendChild(card);
 
-          card.innerHTML += `
+          mainInfoElement.innerHTML += `
           <div class="contact-buttons">
             <button onclick="editContact(event);">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="smaller-logo">
