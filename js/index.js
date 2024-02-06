@@ -184,6 +184,7 @@ function deleteContact(button) {
   card.remove();
 
   alert("Successfully deleted contact");
+
 }
 
 function addContact(event) {
@@ -255,7 +256,7 @@ function addContact(event) {
   }
 
   alert("Successfully added contact");
-  window.location.href = "./newlanding.html";
+  window.location.href = "./landing.html";
 }
 
 function doSearch(event) {
@@ -482,7 +483,7 @@ function login(event) {
 
         saveCookie();
 
-        window.location.href = "newlanding.html";
+        window.location.href = "landing.html";
       }
     };
     xhr.send(payload);
