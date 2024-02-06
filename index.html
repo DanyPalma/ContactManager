@@ -1,38 +1,31 @@
-<!DOCTYPE html>
-<html>
-
-    <head>
-        <link rel="stylesheet" href="styles.css">
-        <script src="./js/index.js"></script>
-
-    </head>
-
-    <body class="main">
-        <div class="login-form-box">
-            <a class="sign-up-button" href="/signup.html">Sign up</a>
-            <form class="login-form">
-                <h1>Log in to your Account</h1>
-                <p>Welcome Back! Please login with your username below.</p>
-                <div class="login-form-items">
-                    <input id="logUsername" placeholder="Username" type="username">
-                    <input id="logPassword" placeholder="Password" type="password">
-                    <button onclick="login(event);">Log In</button>
-                    <h1 id="loginResult"></h1>
-                </div>
-            </form>
-            <div class="login-information">
-                <div class="title-box">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="logo">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
-                </svg>
-                <h1>Contact Manager</h1>
-
-                </div>
-                <div class="quote-box">
-                    <h1>"I did not detect any baristas or losers from the crowd"</h1>
-                    <h2>~ Rick Leinecker</h2>
-                </div>
-            </div>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+</head>
+<body>
+    <div class="cursor">
+        <div id="bigBall" class="cursor_ball cursor_ball_big">
+          <svg height="30" width="30">
+            <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
+          </svg>
         </div>
-    </body>
+        
+        <div id="smallBall" class="cursor_ball cursor_ball_small">
+          <svg height="10" width="10">
+            <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
+          </svg>
+        </div>
+      </div>
+
+
+    <div class="hero-main">
+        <h1>Simple Sync</h1>
+        <div class="hero-anchors">
+            <a href="/signup.html" class="hoverable">Sign Up</a>
+            <a href="/index.html" class="hoverable">Log In</a>
+        </div>
+    </div>
+    <script src="./js/cursor.js"></script>
+</body>
 </html>
