@@ -562,8 +562,31 @@ table {
     justify-content: space-between;
     flex-direction: column;
     box-sizing: border-box;
+    transition: all 200ms ease-in-out;
+    box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
 }
 
+.card:hover {
+    transform: translate3D(0,-1px,0) scale(1.03);
+    box-shadow: 8px 14px 38px rgba(39,44,49,.5), 1px 3px 8px rgba(39,44,49,.5);
+}
+
+.card-edit{
+    border: var(--lighter-grey);
+    background-color: var(--grey);
+    flex: 0 0 30%;
+    height: 60vh;
+    padding: 2rem;
+    border-width: .2rem;
+    border-style: solid;
+    border-radius: 1rem;
+    color:white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
 
 .card > h2 {
     display: none;
@@ -652,4 +675,23 @@ table {
 
 .invisible {
     display: none;
+}
+
+.form-buttons {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-buttons > button {
+    background-color: white;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    color:black;
+    width: 80%;
+    border-radius: .5rem;
+    border: none;
+    padding: .5rem;
 }
