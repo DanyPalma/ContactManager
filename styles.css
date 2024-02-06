@@ -61,13 +61,13 @@
     text-decoration: none;
 }
 
-.sign-up-button:hover {
+/* .sign-up-button:hover {
     background-color: rgba(255, 255, 255, .2);
     border-radius: .5rem;
     transition: background-color;
     transition-duration: 200ms;
     transition-timing-function: ease-in-out;
-}
+} */
 
 .title-box {
     display:flex;
@@ -457,13 +457,13 @@ table {
 
 }
 
-.button-container > a:hover {
+/* .button-container > a:hover {
     background-color: rgba(255, 255, 255, .2);
     border-radius: .5rem;
     transition: background-color;
     transition-duration: 200ms;
     transition-timing-function: ease-in-out;
-}
+} */
 
 .logo {
     height:4rem;
@@ -762,3 +762,27 @@ body {
     }
   }
   
+
+input {
+    cursor:none;
+}
+
+button {
+    cursor:none;
+}
+
+input:hover {
+    cursor: none;
+}
+
+button:hover {
+    cursor:none;
+}
+
+a {
+    cursor:none;
+}
+
+a:hover {
+    cursor:none;
+}
