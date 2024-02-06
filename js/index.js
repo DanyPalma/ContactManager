@@ -15,8 +15,6 @@ function addContact(event) {
   let Email = document.getElementById("email-add").value;
 
 
-  let Name = document.getElementById("query").value;
-
   userId = -1;
 
   let data = document.cookie;
