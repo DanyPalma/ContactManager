@@ -4,7 +4,75 @@ const urlBase = "/api";
 const extension = "php";
 
 function editContact(button) {
+  // Get the card element
+  let card = button.closest('.card');
 
+  // Store original content for canceling edits
+  originalContent = card.innerHTML;
+
+  // Get current information
+  let name = card.querySelector('h1').textContent.trim();
+  let id = card.querySelector('p').textContent.trim().split(':')[1].trim();
+  let phone = card.querySelectorAll('p')[1].textContent.trim().split(':')[1].trim();
+  let email = card.querySelectorAll('p')[2].textContent.trim().split(':')[1].trim();
+
+  // Replace the card content with input fields
+  card.innerHTML = `
+    <div>
+      <input type="text" id="name" value="${name}">
+      <p>ID: <span>${id}</span></p>
+      <div class="contact-buttons">
+        <button onclick="saveContact(this);">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="smaller-logo">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+        </svg>
+</button>
+        <button onclick="cancelEdit(this);">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="smaller-logo">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+      </svg>
+
+        </button>
+      </div>
+    </div>
+    <div>
+      <input type="text" id="phone" value="${phone}">
+      <input type="text" id="email" value="${email}">
+    </div>
+  `;
+}
+
+function cancelEdit(button) {
+  // Get the card element and revert to original content
+  let card = button.closest('.card');
+  card.innerHTML = originalContent;
+}
+
+
+function saveContact(button) {
+  // Get the card element
+  let card = button.closest('.card');
+
+  // Get updated information
+  let name = card.querySelector('#name').value;
+  let phone = card.querySelector('#phone').value;
+  let email = card.querySelector('#email').value;
+
+  // Replace the card content with updated information
+  card.innerHTML = `
+    <div>
+      <h1>${name}</h1>
+      <p>ID: ${card.querySelector('p span').textContent}</p>
+      <div class="contact-buttons">
+        <button onclick="editContact(this);">Edit</button>
+        <button onclick="deleteContact(this);">Delete</button>
+      </div>
+    </div>
+    <div>
+      <p>Phone: ${phone}</p>
+      <p>Email: ${email}</p>
+    </div>
+  `;
 }
 
 function deleteContact(button) {
@@ -56,8 +124,11 @@ function deleteContact(button) {
     alert("Error: " + err.message);
   }
 
+  let card = button.parentNode.parentNode.parentNode;
+
+  card.remove();
+
   alert("Successfully deleted contact");
-  window.location.href = "./newlanding.html";
 }
 
 function addContact(event) {
