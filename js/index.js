@@ -403,6 +403,32 @@ function doSearch(event) {
 
 }
 
+document.getElementById("signPassword").addEventListener("input", function() {
+  let password = this.value;
+
+  if (!validatePassword(password)) {
+      document.getElementById("signUpResult").innerHTML =
+          "Password must be at least 8 characters long and contain at least one uppercase letter, one number, and one special character (!@#$%^&*)";
+      document.getElementById("registerButton").disabled = true;
+  } else {
+      document.getElementById("signUpResult").innerHTML = "";
+      document.getElementById("registerButton").disabled = false;
+  }
+});
+
+function validatePassword(password) {
+  // Minimum 8 characters
+  if (password.length < 8) return false;
+  // Minimum one uppercase letter
+  if (!/[A-Z]/.test(password)) return false;
+  // Minimum one number
+  if (!/\d/.test(password)) return false;
+  // Minimum one special character
+  if (!/[!@#$%^&*]/.test(password)) return false;
+
+  return true;
+}
+
 function doRegister(event) {
   event.preventDefault();
 
