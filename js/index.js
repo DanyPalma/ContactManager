@@ -268,6 +268,10 @@ document.addEventListener("DOMContentLoaded", function() {
     // Call the doSearch function whenever there's an input
     doSearch(event);
   });
+
+  
+
+
 });
 
 
