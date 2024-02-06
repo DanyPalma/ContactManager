@@ -574,3 +574,69 @@ table {
     flex-direction: row;
 }
 
+.add-container {
+    height: 60vh;
+    width: 30vw;
+    border: var(--lighter-grey);
+    border-style: solid;
+    border-width: .2rem;
+    border-radius: 1rem;
+    background-color: var(--black);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-title {
+    height:10vh;
+    width:30vw;
+    display:flex;
+    padding-top: 3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-box {
+    height:50vh;
+    width:30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+}
+
+.add-form {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.add-form > input {
+    width:80%;
+    margin: .5rem;
+    padding: .5rem;
+    border: 1px;
+    border-color: var(--lighter-grey);
+    border-style: solid;
+    border-radius: .5rem;
+    color:white;
+    background-color: transparent;
+}
+
+.add-form > h1 {
+    width: 80%;
+    text-align: start;
+    font-size: large;
+}
+
+.add-form > button {
+    background-color: white;
+    color:black;
+    width: 80%;
+    border-radius: .5rem;
+    border: none;
+    padding: .5rem;
+}
