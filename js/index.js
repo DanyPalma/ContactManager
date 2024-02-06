@@ -8,6 +8,8 @@ function deleteContact(button) {
 
   console.log(id);
 
+}
+
 function addContact(event) {
   event.preventDefault();
 
