@@ -120,10 +120,10 @@ paths:
             
   /read.php:
 
-    get:
+    post:
         tags:
         - read
-        summary: searches for contact in ContactManager app per UserID
+        summary: reads for contact in ContactManager app per UserID
         operationId: dRead
         description: searches for contact in ContactManager app per UserID
         consumes:
@@ -133,7 +133,7 @@ paths:
         parameters:
         - in: body
           name: readItem
-          description: read / search Contact
+          description: read contact
           schema:
             $ref: '#/definitions/read'
         responses:
