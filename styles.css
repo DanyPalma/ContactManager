@@ -640,3 +640,12 @@ table {
     border: none;
     padding: .5rem;
 }
+
+.contact-buttons > button {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+}
