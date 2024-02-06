@@ -7,7 +7,7 @@ function deleteContact(button) {
   var card = button.closest(".invisible");
 
 
-  console.log(card.textContent);
+  console.log(card);
   // Find the closest sibling div with the class "invisible"
 }
 
