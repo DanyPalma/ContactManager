@@ -4,7 +4,7 @@ const urlBase = "/api";
 const extension = "php";
 
 function deleteContact(button) {
-  var childElements = button.querySelectorAll("h2");
+  var childElements = button.querySelectorAll('h2');
 
   console.log(childElements);
 }
