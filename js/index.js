@@ -3,6 +3,79 @@
 const urlBase = "/api";
 const extension = "php";
 
+function addContact(event) {
+  event.preventDefault();
+
+  let FirstName = document.getElementById("first-add").value;
+
+  let LastName = document.getElementById("last-add").value;
+
+  let Phone = document.getElementById("phone-add").value;
+
+  let Email = document.getElementById("email-add").value;
+
+
+  let Name = document.getElementById("query").value;
+
+  userId = -1;
+
+  let data = document.cookie;
+
+  let splits = data.split(",");
+  for (var i = 0; i < splits.length; i++) {
+    let thisOne = splits[i].trim();
+    let tokens = thisOne.split("=");
+    if (tokens[0] == "userId") {
+      userId = parseInt(tokens[1].trim());
+    }
+  }
+
+  if (userId < 0) {
+    alert(
+      "You are not logged in or we had an Issue retrieving your information. Please log in again."
+    );
+
+    window.location.href = "index.html";
+  }
+
+  let tmp = {
+    FirstName:FirstName,
+    LastName:LastName,
+    Phone:Phone,
+    Email:Email,
+    userId,userId
+  }
+
+  let payload = JSON.stringify(tmp);
+
+  let url = urlBase + "/create." + extension;
+
+  let xhr = new XMLHttpRequest();
+
+  xhr.open("POST", url, true);
+
+  xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+  try {
+    xhr.onreadystatechange = function () {
+      if(this.readyState == 4 && this.status == 200) {
+        let jsonObject = JSON.parse(xhr.responseText);
+        err = jsonObject.error;
+        if(err != "") {
+          alert("Error adding contact, please try again");
+          return;
+        }
+      }
+    };
+
+    xhr.send(payload);
+  }
+  catch(err) {
+    alert("Error: " + err.message);
+  }
+ 
+}
+
 function doSearch(event) {
 
   event.preventDefault();
