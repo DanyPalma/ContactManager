@@ -259,6 +259,19 @@ function addContact(event) {
   window.location.href = "./landing.html";
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+  // Get the input element
+  var input = document.getElementById("query");
+
+  // Add event listener for the 'input' event
+  input.addEventListener("input", function(event) {
+    // Call the doSearch function whenever there's an input
+    doSearch(event);
+  });
+});
+
+
+
 function doSearch(event) {
   event.preventDefault();
 
