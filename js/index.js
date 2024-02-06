@@ -6,7 +6,41 @@ const extension = "php";
 function deleteContact(event) {
   event.preventDefault();
 
-  console.log("button pressed");
+  let id = event.target.parentElement.parentElement.querySelector(".idBox")
+    .textContent;
+  id = id.split(":")[1].trim();
+
+  let tmp = { ID: id };
+
+  let payload = JSON.stringify(tmp);
+
+  let url = urlBase + "/delete." + extension;
+
+  let xhr = new XMLHttpRequest();
+
+  xhr.open("POST", url, true);
+
+  xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+  try {
+    xhr.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        let jsonObject = JSON.parse(xhr.responseText);
+        err = jsonObject.error;
+        if (err != "") {
+          alert("Error deleting contact, please try again");
+          return;
+        }
+      }
+    };
+
+    xhr.send(payload);
+  } catch (err) {
+    alert("Error: " + err.message);
+  }
+
+  alert("Successfully deleted contact");
+  window.location.href = "./newlanding.html";
 }
 
 function addContact(event) {
