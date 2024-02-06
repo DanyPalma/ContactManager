@@ -166,8 +166,6 @@ function doSearch(event) {
           let emailElement = document.createElement("p");
           emailElement.textContent = "Email: " + cardData.Email;
 
-          contactInfoElement.append(contactID);
-
           // Append phone and email elements to contact information div
           contactInfoElement.appendChild(phoneElement);
           contactInfoElement.appendChild(emailElement);
@@ -195,14 +193,13 @@ function doSearch(event) {
           </div>
         `;
 
-        let contactDiv = document.getElementById("contact-button-div");
+          let contactDiv = document.getElementById("contact-button-div");
 
-                let contactID = document.createElement("h2");
-                contactID.className = "invisible";
-                contactID.textContent = cardData.ID;
+          let contactID = document.createElement("h2");
+          contactID.className = "invisible";
+          contactID.textContent = cardData.ID;
 
-        contactDiv.appendChild("contactID");
-
+          contactDiv.appendChild(contactID);
         }
       }
     };
