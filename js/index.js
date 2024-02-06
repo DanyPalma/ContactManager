@@ -4,10 +4,9 @@ const urlBase = "/api";
 const extension = "php";
 
 function deleteContact(button) {
-  var childElements = button.querySelectorAll('h2');
+  let id = document.getElementById("contactID").value;
 
-  console.log(childElements);
-}
+  console.log(id);
 
 function addContact(event) {
   event.preventDefault();
@@ -196,6 +195,7 @@ function doSearch(event) {
 
           let contactID = document.createElement("h2");
           contactID.className = "invisible";
+          contactID.id = "contactID"
           contactID.textContent = cardData.ID;
 
           contactDiv.appendChild(contactID);
