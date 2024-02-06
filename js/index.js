@@ -63,10 +63,6 @@ function addContact(event) {
           alert("Error adding contact, please try again");
           return;
         }
-        else {
-          alert("Successfully added contact");
-          window.location.href("./newlanding.html");
-        }
       }
     };
 
@@ -75,6 +71,9 @@ function addContact(event) {
   catch(err) {
     alert("Error: " + err.message);
   }
+
+  alert("Successfully added contact");
+  window.location.href("./newlanding.html");
  
 }
 
@@ -244,7 +243,8 @@ function doRegister(event) {
   } catch (err) {
     document.getElementById("signUpResult").innerHTML = err.message;
   }
-
+        
+  
   alert("Successfully Registered User");
   window.location.href("index.html")
 
