@@ -4,9 +4,9 @@ const urlBase = "/api";
 const extension = "php";
 
 function deleteContact(button) {
-  var card = button.closest(".invisible");
+  var card = button.closest("invisible");
 
-  console.log(card.innerHTML);
+  console.log(card);
   // Find the closest sibling div with the class "invisible"
 }
 
