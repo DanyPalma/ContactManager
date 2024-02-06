@@ -4,11 +4,9 @@ const urlBase = "/api";
 const extension = "php";
 
 function deleteContact(button) {
-  
   let id = button.children;
 
   console.log(id);
-
 }
 
 function addContact(event) {
@@ -156,6 +154,10 @@ function doSearch(event) {
           let nameElement = document.createElement("h1");
           nameElement.textContent =
             cardData.FirstName + " " + cardData.LastName;
+
+          // create p element for ID
+          let idElement = document.createElement("p");
+          idElement.textContent = "ID: " + cardData.ID;
 
           // Create div element for contact information
           let contactInfoElement = document.createElement("div");
