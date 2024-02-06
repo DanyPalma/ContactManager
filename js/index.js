@@ -4,9 +4,9 @@ const urlBase = "/api";
 const extension = "php";
 
 function deleteContact(button) {
-  let cardDiv = button.closest(".card");
+  let cardDiv = button.closest(".idBox");
 
-  let id = cardDiv.children.querySelector("h2");
+  let id = cardDiv.querySelector("h2").textContent;
 
   console.log(id);
 }
@@ -161,6 +161,7 @@ function doSearch(event) {
 
           // create p element for ID
           let idElement = document.createElement("p");
+          idElement.className = "idBox"
           idElement.textContent = "ID: " + cardData.ID;
 
           // Create div element for contact information
