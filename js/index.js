@@ -4,7 +4,9 @@ const urlBase = "/api";
 const extension = "php";
 
 function deleteContact(button) {
-  var contactDiv = button.closest(".card");
+  let contactDiv = button.closest(".invisible").innerHTML;
+
+  console.log(contactDiv);
 }
 
 function addContact(event) {
