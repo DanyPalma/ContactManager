@@ -1,3 +1,11 @@
+document.addEventListener("DOMContentLoaded", function() {
+    
+    let sub = document.getElementById("registerButton").disabled = true;
+  
+});
+
+
+
 document.getElementById("signPassword").addEventListener("input", function() {
     let password = this.value;
 
