@@ -150,6 +150,9 @@ function doSearch(event) {
           let card = document.createElement("div");
           card.className = "card";
 
+          let mainInfoElement = document.createElement("div");
+
+
           // Create h1 element for name
           let nameElement = document.createElement("h1");
           nameElement.textContent =
@@ -174,8 +177,11 @@ function doSearch(event) {
           contactInfoElement.appendChild(emailElement);
 
           // Append name and contact information to the card
-          card.appendChild(nameElement);
-          card.appendChild(idElement);
+
+          mainInfoElement.appendChild(nameElement);
+          mainInfoElement.appendChild(idElement)
+
+          card.appendChild(mainInfoElement);
           card.appendChild(contactInfoElement);
 
           // Append the card to the card container
