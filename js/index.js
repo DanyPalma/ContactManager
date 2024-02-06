@@ -73,7 +73,7 @@ function addContact(event) {
   }
 
   alert("Successfully added contact");
-  window.location.href("./newlanding.html");
+  window.location.href = "./newlanding.html";
  
 }
 
@@ -246,7 +246,7 @@ function doRegister(event) {
         
   
   alert("Successfully Registered User");
-  window.location.href("index.html")
+  window.location.href = "./index.html"
 
 }
 
