@@ -6,19 +6,7 @@ const extension = "php";
 function deleteContact(event) {
   event.preventDefault();
 
-  var cards = document.querySelectorAll(".card");
-
-  cards.forEach(function (card) {
-    var button = card.querySelector(".log-button");
-    var h2 = card.querySelector("h2");
-
-    button.addEventListener("click", function () {
-      // Log the content of the corresponding H2
-      console.log(h2.textContent);
-    });
-
-    
-  });
+  console.log("button pressed");
 }
 
 function addContact(event) {
@@ -222,6 +210,19 @@ function doSearch(event) {
   } catch (err) {
     alert("Error: " + err.message);
   }
+
+  var cards = document.querySelectorAll(".card");
+
+  cards.forEach(function (card) {
+    var button = card.querySelector(".log-button");
+    var h2 = card.querySelector("h2");
+
+    button.addEventListener("click", function () {
+      // Log the content of the corresponding H2
+      console.log(h2.textContent);
+    });
+  });
+
 }
 
 function doRegister(event) {
