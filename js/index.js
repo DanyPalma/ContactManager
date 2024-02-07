@@ -463,7 +463,7 @@ function doRegister(event) {
     firstName: firstName,
     lastName: lastName,
     login: username,
-    password: password,
+    password: password, 
   };
 
   let payload = JSON.stringify(tmp);
@@ -482,8 +482,7 @@ function doRegister(event) {
         let jsonObject = JSON.parse(xhr.responseText);
         err = jsonObject.error;
         if (err != "") {
-          document.getElementById("signUpResult").innerHTML =
-            "User/Password combination incorrect";
+          alert("Error registering user, please try again");
           return;
         }
       }
@@ -521,8 +520,7 @@ function login(event) {
         let jsonObject = JSON.parse(xhr.responseText);
         userId = jsonObject.id;
         if (userId < 1) {
-          document.getElementById("loginResult").innerHTML =
-            "User/Password combination incorrect";
+          alert("User/Password combination incorrect");
           return;
         }
 
