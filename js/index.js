@@ -551,82 +551,31 @@ function saveCookie() {
     date.toGMTString();
 }
 
-// function readCookie()
-// {
-//     userId = -1;
-//     let data = document.cookie;
+function readCookie()
+{
+    userId = -1;
+    let data = document.cookie;
 
-//     let splits = data.split(",");
-//     for(var i = 0; i < splits.length; i++) {
-//         let thisOne = splits[i].trim();
-//         let tokens = thisOne.split("=");
-//         if(tokens[0] == "firstName"){
-//             firstName = tokens[1];
-//         }
-//         else if( tokens[0] == "lastName"){
-//             lastName = tokens[1];
-//         }
-//         else if( tokens[0] == "userId"){
-//             userId = parseInt(tokens[1].trim());
-//         }
-//     }
+    let splits = data.split(",");
+    for(var i = 0; i < splits.length; i++) {
+        let thisOne = splits[i].trim();
+        let tokens = thisOne.split("=");
+        if(tokens[0] == "firstName"){
+            firstName = tokens[1];
+        }
+        else if( tokens[0] == "lastName"){
+            lastName = tokens[1];
+        }
+        else if( tokens[0] == "userId"){
+            userId = parseInt(tokens[1].trim());
+        }
+    }
 
-//     if(userId < 0) {
-//         window.location.href="index.html";
-//     }
-//     else
-//     {
-//         document.getElementById("userName").innerHTML = "Welcome " + firstName + " " + lastName + "!";
+    if(userId < 0) {
+        window.location.href="log.html";
+    }
 
-//         let tmp = {userId:userId};
-
-//         let payload = JSON.stringify(tmp);
-
-//         let url = urlBase + '/read.' + extension;
-
-//         let xhr = new XMLHttpRequest();
-
-//         xhr.open("POST", url, true);
-
-//         xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-
-//         try
-//         {
-
-//             xhr.onreadystatechange = function()
-//             {
-//                 if(this.readyState == 4 && this.status == 200)
-//                 {
-//                     let jsonObject = JSON.parse(xhr.responseText);
-//                     console.log(jsonObject);
-//                     let table = document.getElementById("contacts");
-//                     jsonObject.forEach(function (contact) {
-//                       let row = table.insertRow();
-//                       let propertiesToDisplay = [
-//                         "FirstName",
-//                         "LastName",
-//                         "Email",
-//                         "Phone",
-//                       ];
-//                       propertiesToDisplay.forEach(function (property) {
-//                         let cell = row.insertCell();
-//                         cell.innerHTML = contact[property];
-//                       });
-//                     });
-
-//                 }
-//             };
-//             xhr.send(payload);
-
-//         }
-//         catch(err)
-//         {
-//             window.alert("Could not retrieve data for user " + firstName + " " + lastName);
-//         }
-
-//     }
-
-// }
+}
 
 function doLogout(event) {
   event.preventDefault;
