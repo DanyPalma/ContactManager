@@ -228,6 +228,11 @@ function addContact(event) {
     userId,
   };
 
+  if(FirstName === "" || LastName === "" || Phone === "" || Email === ""){
+    alert("Please fill out all fields");
+    return;
+  }
+
   let payload = JSON.stringify(tmp);
 
   let url = urlBase + "/create." + extension;
