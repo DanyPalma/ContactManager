@@ -454,6 +454,11 @@ function doRegister(event) {
   let username = document.getElementById("signUsername").value;
   let password = document.getElementById("signPassword").value;
 
+  if(firstName === "" || lastName === "" || username === "" || password === ""){
+    alert("Please fill out all fields");
+    return;
+  }
+
   let tmp = {
     firstName: firstName,
     lastName: lastName,
